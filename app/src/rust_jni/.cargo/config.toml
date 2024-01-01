@@ -1,0 +1,20 @@
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]
+
+[target.i686-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]
+
+# rustcflags = ["-ffunction-sections", "-fdata-sections", "-fvisibility=hidden", "-w", "-Wl,--gc-sections"]
+
+[target.armv7-linux-androideabi]
+ar = "D:/android-ndk-r21e/toolchains/llvm/prebuilt/windows-x86_64/bin/arm-linux-androideabi-ar.exe"
+linker = "D:/android-ndk-r21e/toolchains/llvm/prebuilt/windows-x86_64/bin/armv7a-linux-androideabi30-clang.cmd"
+rustflags = ["-L", "D:/android-ndk-r21e/platforms/android-30/arch-arm/usr/lib"]
+
+[target.aarch64-linux-android]
+ar = "D:/android-ndk-r21e/toolchains/llvm/prebuilt/windows-x86_64/bin/aarch64-linux-android-ar.exe"
+linker = "D:/android-ndk-r21e/toolchains/llvm/prebuilt/windows-x86_64/bin/aarch64-linux-android30-clang.cmd"
+rustflags = ["-L", "D:/android-ndk-r21e/platforms/android-30/arch-arm64/usr/lib"]
+
+[env]
+MACOSX_DEPLOYMENT_TARGET = "10.15"
